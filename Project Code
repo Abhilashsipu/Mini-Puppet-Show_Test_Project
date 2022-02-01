@@ -1,0 +1,85 @@
+#include <AFMotor.h>
+
+AF_DCMotor LH(1);
+AF_DCMotor RH(4);
+AF_DCMotor LL(2);
+AF_DCMotor RL(3);
+void setup() {
+  // put your setup code here, to run once:
+LH.setSpeed(255);
+RH.setSpeed(255);
+LL.setSpeed(255);
+RL.setSpeed(255);
+
+LH.run(RELEASE);
+RH.run(RELEASE);
+LL.run(RELEASE);
+RL.run(RELEASE);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+LH.run(FORWARD); //BOTH HANDS ARE RAISED 
+RH.run(FORWARD);
+delay(7000);
+
+LH.run(RELEASE); //BOTH HAND MOTOR STOPPED IN UP DIRECTION
+RH.run(RELEASE);
+delay(2000);
+
+LH.run(BACKWARD); //BOTH HANDS CAME DOWN
+RH.run(BACKWARD);
+delay(7000);
+
+LH.run(RELEASE);
+RH.run(RELEASE);
+
+LL.run(FORWARD); //BOTH LEG MOTOR ARE APARTED
+RL.run(FORWARD);
+delay(3000);
+
+LL.run(RELEASE); //BOTH LEG MOTOR STOPPED IN UP DIRECTION
+RL.run(RELEASE);
+delay(2000);
+
+LL.run(BACKWARD); //BOTH LEGS CAME CLOSER
+RL.run(BACKWARD);
+delay(3000);
+
+LL.run(RELEASE); // LEG MOTOR STOPPED
+RL.run(RELEASE);
+delay(2000);
+
+LH.run(FORWARD);
+RL.run(FORWARD);
+delay(4000);
+
+
+LH.run(RELEASE);
+RL.run(RELEASE);
+delay(2000);
+
+LH.run(BACKWARD);
+RL.run(BACKWARD);
+delay(4000);
+
+LH.run(RELEASE); //
+RL.run(RELEASE);
+
+RH.run(FORWARD);
+LL.run(FORWARD);
+delay(4000);
+
+
+RH.run(RELEASE);
+LL.run(RELEASE);
+delay(2000);
+
+RH.run(BACKWARD);
+LL.run(BACKWARD);
+delay(4000);
+
+RH.run(RELEASE); //
+LL.run(RELEASE);
+delay(2000);
+}
